@@ -79,7 +79,7 @@
  
 							}
 							Bullet = function (id,x,y,spdX,spdY,width,height){
-								var upgrade ={
+								var upgrad ={
 									x:x,
 									spdX:spdX,
 									y:y,
@@ -90,22 +90,11 @@
 									height:height,
 									color:'black',
 								};
-							bulletList[id] = upgrade;
+							bulletList[id] = upgrad;
  
 							}
 							
-							randomlyGenerateBullet =function(){
-								var x=player.x;
-								var y=player.y;
-								var height=10;
-								var width=10;
-								var id=Math.random()*WIDTH;
-								
-								var angle= Math.random()*360;
-								var spdX=Math.cos(angle/180*Math.PI)*5;
-								var spdY=Math.sin(angle/180*Math.PI)*5;
-								Bullet(id,x,y,spdX,spdY,width,height);
-							}
+							
 							document.onmousemove = function(mouse){
 								var mouseX = mouse.clientX;
 								var mouseY = mouse.clientY;
@@ -143,8 +132,7 @@
 								{
 									something.spdY = -something.spdY;
 								}
-							}
-							
+							}		
 							testCollisionRectRect = function(rect1,rect2){
 								return rect1.x <= rect2.x+rect2.width
 									&& rect2.x <= rect1.x+rect1.width
@@ -214,12 +202,19 @@
 								ctx.fillText('Score: '+score, 600,30);
 							}
 							startNewGame =function(){
-										player.hp=10;
+									
+									//for(var key in bulletList)
+									//{
+									//	delete bulletList[key];
+									//}
+									bulletList={};
+									player.hp=10;
 										timeWhenGameStarted = Date.now();
 										frameCount=0;
-							     	enemyList={};
-								    score=0;
-								    upgradeList={};
+										enemyList={};
+										score=0;
+										upgradeList={};
+										
 								
 							randomlyGenerateEnemy();
 							randomlyGenerateEnemy();
@@ -246,7 +241,18 @@
 								var spdY=0;
 								Upgrade(id,x,y,spdX,spdY,width,height);
 							}
-						
+							randomlyGenerateBullet =function(){
+								var x=player.x;
+								var y=player.y;
+								var height=10;
+								var width=10;
+								var id=Math.random()*WIDTH;
+								
+								var angle= Math.random()*360;
+								var spdX=Math.cos(angle/180*Math.PI)*5;
+								var spdY=Math.sin(angle/180*Math.PI)*5;
+								Bullet(id,x,y,spdX,spdY,width,height);
+							}
 							startNewGame();
 							//wykonaj metode update co 500 ms
 							setInterval(update,40);
