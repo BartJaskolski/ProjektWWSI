@@ -19,27 +19,22 @@
 					<ol>
 						<li>
 							<a href="index.php">Strona Głowna</a>
+							<ul>
+									<li>
+										<a href="#">Halo</a>
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<a href="#">XX</a>
+									</li>
+								</ul>
 						</li>
 						<li>
 							<a href="gra.php">Graj !</a>
 								<ul>
 									<li>
-										<a href="#">Podstrona1</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona2</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona3</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona4</a>
+										<a href="#">Kup grę</a>
 									</li>
 								</ul>
 						</li>
@@ -49,13 +44,10 @@
 					</ol>
 				</div>
 				<div class="content">
-				<p>Początek</p>
-				<canvas id="example" width="200" height="200" style="background-color:#555555">
-					Twoja przeglądarka nie obsługuje elementu Canvas.
-				</canvas>
-				<?php
-				echo "hello"
-				?>
+				<p>Aby zacząć grać musisz się zalogować. Gra została stworzona przy użyciu JavaScript.</p>
+				<img src="img/GameScreen.png" style="border:5px ridge #888888;">
+				<p>Możesz również zakupić pełną wersję gry tutaj</p>
+				<p><h2>Enjoy</h2></p>
 				</div>
 				<div class="socials">
 					<div class="socialdivs">
