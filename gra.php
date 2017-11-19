@@ -69,9 +69,7 @@
 					Twoja przeglądarka nie obsługuje elementu Canvas.
 				</canvas>
 										
-					<script>
-					
-						//gra					</script>
+					<script src="scripts/gra.js" type="text/javascript"></script>
 					
 					
 				<p>Zostałes zalogowny do Gry</p>

@@ -2,7 +2,7 @@
 <html lang="pl">
 
 	<head>
-		<meta charset="utf-8" />
+		<meta charset="utf-8"></meta>
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/fontello.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
