@@ -22,6 +22,7 @@
 
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/fontello.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -43,28 +44,13 @@
 							<a href="#">Graj !</a>
 								<ul>
 									<li>
-										<a href="#">Podstrona1</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona2</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona3</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona4</a>
+										<a href="#">Kup grę</a>
 									</li>
 								</ul>
 						</li>
 						<li><a href="rejestracja.php">Rejestracja</a></li>
 						<li><a href="login.php">Login</a></li>
-						<li><a href="#">Ranking</a></li>
+						<li><a href="ranking.php">Ranking</a></li>
 					</ol>
 				</div>
 				<div class="content">
@@ -74,14 +60,14 @@
 							   <br/>
 						Hasło: <br/> <input type="password" name="haslo"/>
 							<br/>
-							<input type="submit" value="Logowanie" />
+							<input class="button" type="submit" value="Logowanie" />
 					</form>
 				<?php
 				if(isset($_SESSION['blad']))
 				{
 					echo $_SESSION['blad'];
 				}
-				echo "Witaj, oto strona logowania";
+				echo "<p>Witaj, oto strona logowania</p>";
 				?>
 				</div>
 				<div class="socials">

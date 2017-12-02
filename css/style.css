@@ -179,6 +179,69 @@ ol>li>ul>li:hover > a
 {
  color: #451717;	
 }
-#example:hover
+#EX
 {
+	
+}
+.button
+{
+	background-color:#c34f4f;
+	border:none;
+	color:white;
+	padding: 15px 32px; 
+	text-align: center;
+	text-decoration:none;
+	display:inline-block;
+	font-size:20px;
+}
+.button:hover
+{
+	cursor:pointer;
+	background-color: #cf6969;
+	 color: #451717;
+}
+input[type=text], select{
+	width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	font-size:20px;
+	background-color:#eeeaea;
+}
+
+input[type=password], select{
+	width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	font-size:20px;
+	background-color:#eeeaea;
+}
+p
+{
+	font-size:26px;
+}
+label
+{
+	font-size:26px;
+}
+#TabelaRank
+{
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+}
+#TabelaRank td, #TabelaRank th
+{
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+#TabelaRank tr:nth-child(even){
+	background-color: #666666;
 }

@@ -15,6 +15,7 @@
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/fontello.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	
 	</head>
 
 	<body>
@@ -31,51 +32,45 @@
 						</li>
 						<li>
 							<a href="gra.php">Graj !</a>
-								<ul>
-									<li>
-										<a href="#">Podstrona1</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona2</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona3</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona4</a>
-									</li>
-								</ul>
+							 <ul>
+								<li>
+									<a href="#">Kup grę</a>
+								</li>
+							 </ul>
 						</li>
 						<li><a href="rejestracja.php">Rejestracja</a></li>
 						<li><a href="#">Login</a></li>
 						<li><a href="ranking.php">Ranking</a></li>
 					</ol>
 				</div>
+				
 				<div class="content">
-				<?php
-				echo "Witaj ".$_SESSION['$user']."!";
-				echo '<a href="logout.php">Wyloguj się</a>';
-				?>
-				<br/>
-				<br/>
-				<br/>
-				<canvas id="example" width="800" height="600" style="background-color:#555555">
-					Twoja przeglądarka nie obsługuje elementu Canvas.
-				</canvas>
-										
-					<script src="scripts/gra.js" type="text/javascript"></script>
+					<?php
+					echo "Witaj ".$_SESSION['$user']."!";
+					echo '<a href="logout.php">Wyloguj się</a>';
+					?>
+					<br/><br/><br/>
 					
 					
-				<p>Zostałes zalogowny do Gry</p>
+				
+					<canvas id="EX" width="800" height="600" style="background-color:#555555" ></canvas>
+				
+					<script id="game" src="scripts/gra.js" type="text/javascript"></script>	
+				
+					<button id="but" onclick="start('<?php echo $_SESSION['id'] ?>')">Start</button> 
+				
+					<form id="rank" action="rank.php" method="post">
+						<input id="nick"  type="hidden" name="nickname" value="<?php $_SESSION['$user']?>"/>
+						<input  type="hidden" name="wynik" value=""/>
+						<input  type="hidden" name="Czas" value=""/>
+					</form>
+				
+					<p>Zostałes zalogowny do Gry :)</p>			
 				
 				</div>
+				
 				<div class="socials">
+					
 					<div class="socialdivs">
 						<a href="https://www.facebook.com/bartosz.jaskolski.54" target="_blank">
 						<div class="fb">
@@ -98,13 +93,14 @@
 						</a>
 						<div style="clear:both"></div>
 					</div>
+				
 				</div>
+				
 				<div class="footer">BartoszJaskolski.com &copy;</div>
 			</div>
 			
 			<script src="halo.js"></script>
 			
-				
 <script>
 
 	$(document).ready(function() {

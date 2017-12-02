@@ -3,6 +3,7 @@
 
 	<head>
 		<meta charset="utf-8"></meta>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/fontello.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -19,16 +20,6 @@
 					<ol>
 						<li>
 							<a href="index.php">Strona Głowna</a>
-							<ul>
-									<li>
-										<a href="#">Halo</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">XX</a>
-									</li>
-								</ul>
 						</li>
 						<li>
 							<a href="gra.php">Graj !</a>

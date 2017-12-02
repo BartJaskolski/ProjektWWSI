@@ -156,34 +156,20 @@
 							<a href="index.php">Strona Głowna</a>
 						</li>
 						<li>
-							<a href="#">Graj !</a>
-								<ul>
-									<li>
-										<a href="#">Podstrona1</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona2</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona3</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona4</a>
-									</li>
-								</ul>
+							<a href="gra.php">Graj !</a>
+							<ul>
+								<li>
+									<a href="#">Kup grę</a>
+								</li>
+							</ul>
 						</li>
 						<li><a href="rejestracja.php">Rejestracja</a></li>
 						<li><a href="login.php">Login</a></li>
-						<li><a href="#">Ranking</a></li>
+						<li><a href="ranking.php">Ranking</a></li>
 					</ol>
 				</div>
 				<div class="content">
+				<p> Witaj, oto strona rejestracyjna </p>
 					<form method="post">
 						
 						Login: <br/> <input type="text" name="login"/>  <br/>
@@ -205,9 +191,9 @@
 								}
 						?>
 						
-						Powtórz Hasło: <input type="password" name="Haslo2"/><br/>
+						Powtórz Hasło: <br/> <input type="password" name="Haslo2"/><br/>
 							
-						E-mail: <input type="text" name="email"/><br/>
+						E-mail: <br/> <input type="text" name="email"/><br/>
 							
 						<?php
 								if(isset($_SESSION['e_email']))
@@ -217,10 +203,11 @@
 								}
 						?>
 						
-							
+						<br/>
 						<label>
 							<input type="checkbox" name="regulamin" /> Akceptuję regulamin
 						</label>
+						<br/>
 							<?php
 								if(isset($_SESSION['e_regulamin']))
 								{
@@ -230,13 +217,13 @@
 						?>
 						
 							<br />
-						<input type="submit" value="Rejestracja" />
+						<input class="button" type="submit" value="Rejestracja" />
 							
 						
 					</form>
-				<?php
-				echo "Witaj, oto strona rejestracyjna"
-				?>
+				
+				
+				
 				</div>
 				<div class="socials">
 					<div class="socialdivs">

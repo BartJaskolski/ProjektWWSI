@@ -3,9 +3,11 @@
 
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/fontello.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<script src="halo.js"></script>
 	</head>
 
 	<body>
@@ -24,22 +26,7 @@
 							<a href="#">Graj !</a>
 								<ul>
 									<li>
-										<a href="#">Podstrona1</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona2</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona3</a>
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<a href="#">Podstrona4</a>
+										<a href="#">Kup Grę</a>
 									</li>
 								</ul>
 						</li>
@@ -48,8 +35,45 @@
 						<li><a href="#">Ranking</a></li>
 					</ol>
 				</div>
-				<div class="content">
-					
+				<div style="text-align:center;" class="content">
+				<p> TOP ten wyników !</p>
+				</br>
+				<p> <a href="rankCzas()">TOP Czasy</a></p>
+				
+				</br>
+					<table id="TabelaRank">
+						<tr>
+							<th>Miejsce</th>
+							<th>Nick</th>	
+							<th>Wynik</th>
+							<th>Czas Gry</th>
+						</tr>
+							<?php
+							session_start();
+							require_once "phpc.php";
+							
+							$con = mysqli_connect($host,$user,$pass,$baza);
+							
+							$result = $con->query("SELECT * FROM ranking JOIN users ON Gracz=users.id ORDER BY ranking.Wynik DESC");
+							$counter =0;
+							if($result ->num_rows>0)
+							{
+								
+								while($row =$result->fetch_assoc())
+								{
+									$counter++;									
+								echo "<tr>"
+										."<th>".$counter."</th>"
+										."<th>".$row["login"]."</th>"
+										."<th>".$row["Wynik"]."</th>"
+										."<th>".$row["CzasGry"]."</th>"
+									."</tr>";
+								}
+							}
+					?>
+						
+					 </table>
+				
 				</div>
 				<div class="socials">
 					<div class="socialdivs">
@@ -102,6 +126,7 @@
 		stickyNav();
 	});
 	});
+
 	
 </script>
 			
