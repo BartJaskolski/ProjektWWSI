@@ -1,22 +1,3 @@
-﻿<?php
-	session_start();
-	
-	if((isset($_SESSION['zalogowany'])) && ($_SESSION['zalogowany']==true))
-	{
-		header('Location: gra.php');
-		exit();
-	}
-	/*if(!isset($_SESSION['udanaR']))
-	{
-		header('location:rejestracja.php');
-		exit();
-	}
-	*/
-	else
-	{
-		unset($_SESSION['udanaR']);
-	}
-?>
 <!DOCTYPE HTML>
 <html lang="pl">
 
@@ -26,6 +7,7 @@
 		<link href="css/style.css" rel="stylesheet" type="text/css" />
 		<link href="css/fontello.css" rel="stylesheet" type="text/css" />
 		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<script src="halo.js"></script>
 	</head>
 
 	<body>
@@ -44,31 +26,62 @@
 							<a href="#">Graj !</a>
 								<ul>
 									<li>
-										<a href="#">Oceń grę</a>
+										<a href="#">Oceń Grę</a>
 									</li>
 								</ul>
 						</li>
 						<li><a href="rejestracja.php">Rejestracja</a></li>
 						<li><a href="login.php">Login</a></li>
-						<li><a href="ranking.php">Ranking</a></li>
+						<li>
+						<a href="ranking.php">Top wyniki</a>
+						<ul>
+									<li>
+										<a href="statystykiGracza.php">Historia Gier</a>
+									</li>
+								</ul>
+						</li>
 					</ol>
 				</div>
-				<div class="content">
-					<form action="log.php" method="post">
+				<div style="text-align:center;" class="content">
+				<p> TOP 10 wyników !</p>
+				</br>
+				
+				</br>
+					<table id="TabelaRank">
+						<tr>
+							<th>Miejsce</th>
+							<th>Nick</th>	
+							<th>Wynik</th>
+							<th>Czas Gry</th>
+						</tr>
+							<?php
+							session_start();
+							require_once "phpc.php";
+							
+							$con = mysqli_connect($host,$user,$pass,$baza);
+							
+							$result = $con->query("SELECT * FROM ranking JOIN users ON Gracz=users.id ORDER BY ranking.Wynik DESC");
+							$counter =0;
+							if($result ->num_rows>0)
+							{
+								
+								while($row =$result->fetch_assoc())
+								{
+									$counter++;
+									if($row['Gracz']==$_SESSION['id']){
+								echo "<tr>"
+										."<th>".$counter."</th>"
+										."<th>".$row["login"]."</th>"
+										."<th>".$row["Wynik"]."</th>"
+										."<th>".$row["CzasGry"]."</th>"
+									."</tr>";
+									}
+								}
+							}
+							?>
 						
-						Login: <br/> <input type="text" name="login"/> 
-							   <br/>
-						Hasło: <br/> <input type="password" name="haslo"/>
-							<br/>
-							<input class="button" type="submit" value="Logowanie" />
-					</form>
-				<?php
-				if(isset($_SESSION['blad']))
-				{
-					echo $_SESSION['blad'];
-				}
-				echo "<p>Witaj, oto strona logowania</p>";
-				?>
+					 </table>
+				
 				</div>
 				<div class="socials">
 					<div class="socialdivs">

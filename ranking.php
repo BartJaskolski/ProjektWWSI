@@ -26,19 +26,25 @@
 							<a href="#">Graj !</a>
 								<ul>
 									<li>
-										<a href="#">Kup Grę</a>
+										<a href="#">Oceń Grę</a>
 									</li>
 								</ul>
 						</li>
 						<li><a href="rejestracja.php">Rejestracja</a></li>
 						<li><a href="login.php">Login</a></li>
-						<li><a href="#">Ranking</a></li>
+						<li>
+						<a href="ranking.php">Top wyniki</a>
+						<ul>
+									<li>
+										<a href="statystykiGracza.php">Historia Gier</a>
+									</li>
+								</ul>
+						</li>
 					</ol>
 				</div>
 				<div style="text-align:center;" class="content">
-				<p> TOP ten wyników !</p>
+				<p> TOP 10 wyników !</p>
 				</br>
-				<p> <a href="rankCzas()">TOP Czasy</a></p>
 				
 				</br>
 					<table id="TabelaRank">
@@ -70,7 +76,7 @@
 									."</tr>";
 								}
 							}
-					?>
+							?>
 						
 					 </table>
 				
@@ -126,7 +132,6 @@
 		stickyNav();
 	});
 	});
-
 	
 </script>
 			

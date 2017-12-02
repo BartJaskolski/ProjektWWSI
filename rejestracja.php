@@ -159,7 +159,7 @@
 							<a href="gra.php">Graj !</a>
 							<ul>
 								<li>
-									<a href="#">Kup grę</a>
+									<a href="#">Oceń grę</a>
 								</li>
 							</ul>
 						</li>
